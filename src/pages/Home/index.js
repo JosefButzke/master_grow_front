@@ -14,7 +14,19 @@ const Login = () => {
         };
 
         loadCultivos();
-    }, [])
+    }, []);
+
+
+    const handleAddCultivo = () => {
+        setCultivos([...cultivos, {
+            id: cultivos.length + 1,
+            title: 'tes',
+            temperatura_min: 10,
+            temperatura_max: 20,
+            umidade_solo_min: 30,
+            umidade_solo_max: 40
+        }])
+    }
 
     return (
         <Container>
@@ -35,15 +47,16 @@ const Login = () => {
                     <Divider />
                     <ButtonStyled>Update</ButtonStyled>
                 </Cultivo>
-            ))}
+            ))
+            }
 
 
             <Cultivo>
-                <AddButton>
+                <AddButton onClick={() => handleAddCultivo()}>
                     <AddIconStyled />
                 </AddButton>
             </Cultivo>
-        </Container>
+        </Container >
     )
 }
 

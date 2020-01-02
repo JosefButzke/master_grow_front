@@ -3,19 +3,13 @@ import AddIcon from '@material-ui/icons/Add';
 import { Button } from '@material-ui/core';
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    :after {
-        content: '';
-        flex: auto;
-        justify-content: space-around;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    margin: 20px;
 `;
 
 export const Cultivo = styled.div`
-    width: 25%;
     min-width: 400px;
     height: 420px;
     background: white;
@@ -25,7 +19,6 @@ export const Cultivo = styled.div`
     border-width: 2px;
     border-color: #ddd;
 
-    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,18 +39,6 @@ export const Cultivo = styled.div`
         p {
             display: inline;
             font-size: 14px;
-        }
-
-        div {
-            width: 50px;
-            height: 30px;
-            border-style: solid;
-            border-width: 1px;
-            border-color: #ddd;
-            border-radius: 4px;
-            justify-content: center;
-            margin-top: 5px;
-            margin-bottom: 15px;
         }
 
         input {
